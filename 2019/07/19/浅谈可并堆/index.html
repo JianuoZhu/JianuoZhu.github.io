@@ -97,6 +97,7 @@
 
 
   <meta name="description" content="普通的二叉堆是一颗完全二叉树，可以支持$O(1)$的查询当前堆内min/max，$O(log n)$的插入和删除节点。他支不支持合并呢？">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈可并堆-启发式合并-左偏树">
 <meta property="og:url" content="http://yoursite.com/2019/07/19/浅谈可并堆/index.html">
@@ -108,7 +109,7 @@
 <meta property="og:image" content="https://i.loli.net/2018/11/18/5bf16e33be631.jpg">
 <meta property="og:image" content="https://i.loli.net/2018/11/18/5bf16ebd7133f.jpg">
 <meta property="og:image" content="https://i.loli.net/2018/11/18/5bf16f387cc36.jpg">
-<meta property="og:updated_time" content="2019-07-19T11:13:28.623Z">
+<meta property="og:updated_time" content="2019-07-19T11:41:13.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈可并堆-启发式合并-左偏树">
 <meta name="twitter:description" content="普通的二叉堆是一颗完全二叉树，可以支持$O(1)$的查询当前堆内min/max，$O(log n)$的插入和删除节点。他支不支持合并呢？">
@@ -370,7 +371,7 @@
                 
               
 
-              <time title="创建时间：2019-07-19 14:15:34 / 修改时间：19:13:28" itemprop="dateCreated datePublished" datetime="2019-07-19T14:15:34+08:00">2019-07-19</time>
+              <time title="创建时间：2019-07-19 14:15:34 / 修改时间：19:41:13" itemprop="dateCreated datePublished" datetime="2019-07-19T14:15:34+08:00">2019-07-19</time>
             
 
             
@@ -380,6 +381,31 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/堆/" itemprop="url" rel="index"><span itemprop="name">堆</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -470,11 +496,33 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
+      
 
       
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/19/浅谈权值线段树与可持久化线段树/" rel="prev" title="浅谈权值线段树与可持久化线段树">
+                浅谈权值线段树与可持久化线段树 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -532,14 +580,50 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
               
             </nav>
           
@@ -1058,43 +1142,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-      for (i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<style>
-.MathJax_Display {
-  overflow: auto hidden;
-}
-</style>
-
-    
   
 
 

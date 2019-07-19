@@ -1,8 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[浅谈整体二分和CDQ分治]]></title>
+    <url>%2F2019%2F07%2F19%2F%E6%B5%85%E8%B0%88%E6%95%B4%E4%BD%93%E4%BA%8C%E5%88%86%E5%92%8CCDQ%E5%88%86%E6%B2%BB%2F</url>
+    <content type="text"><![CDATA[你：“woc这个树套树细节怎么这么多？” 某dalao：“什么题让我看一看……这不cdq裸题吗？” 你：“???…” 你：“woc这三百行的代码怎么调啊？” 某dalao：“emmm，我的才一百不到啊？” 你：“???求教怎么写的” 某dalao：“整体二分直接做啊” 你：“???…” 整体二分前置知识:二分答案(等于没说) 先来看一道经典题吧 k-th num题意：给你一个序列，每次询问一个子序列内的第k大的值 我们先来看如果只有一次询问该怎么做。 考虑使用二分答案二分出答案域$[l, r]$，该怎么检查？ 可以直接暴力扫一遍区间，统计一下大小在$[l, mid]$里面的个数，如果大于$k$的话就说明答案一定在$[l, mid]$里面，令$r = mid$，继续二分。假如大小在$[l, mid]$里面的个数小于$k$，就说明答案在$[mid+1, r]$里面，令$l = mid+1$继续二分即可。 以上的二分都是基础，想必大家都是没什么问题。 但是如果想要多组询问该怎么做呢？肯定不能每组询问都扫一遍，]]></content>
+      <categories>
+        <category>分治</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>二分</tag>
+        <tag>分治</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[浅谈权值线段树与可持久化线段树]]></title>
+    <url>%2F2019%2F07%2F19%2F%E6%B5%85%E8%B0%88%E6%9D%83%E5%80%BC%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%B8%8E%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E7%BA%BF%E6%AE%B5%E6%A0%91%2F</url>
+    <content type="text"><![CDATA[我们先从一道经典题来入手吧 你需要维护一个数据结构，支持插入一个数，以及询问当前第k大的数是什么我们用平衡树自然是可以做的，但有没有别的更简单的做法呢？ 我们考虑类比平衡树，用线段树解决。平衡树为什么可以做？因为他它证了当前节点左儿子比他小，右儿子比他大，并且维护了每个节点的size，所以可以找到k大。那我们想用线段树该怎么做呢？ 这里我们转换一下思路，用每个叶子节点记录下当前自然数出现的次数。例如当前某个叶子节点管理的区间是[3,3],那么他记录的就是3这个自然数当前出现的次数。那么对于任意一个节点管理的区间是lr，那么他记录的就是自然数lr一共出现了多少次。 我们每次插入就是相当于线段树上单点修改。查询k大的操作类比一下平衡树就行了。 这种线段树被称作权值线段树。权值线段树有什么好的呢？但我们再观察观察，就可以发现一个非常惊人的事情，两颗权值线段树可以类似前缀和直接做减法！！比如我们用插入了b以后的权值线段树减去插入a之前的权值线段树得到的权值线段树，得到的权值线段树就相当于只插入a到b之间的数的权值线段树！！我们可以用这个性质干什么呢？某些读者可能已经想到了。区间K大！！！ 这种类似前缀和用权值线段树的东西就叫做可持久化线段树，也叫主席树。关于主席树的详解强烈推荐孤独·粲泽dalao的博客 带修的主席树也不难，如果我们朴素的用类似前缀和的修改的话复杂度是$O(n log n)$的。 那么有没有更快一点的修改速度呢？有。树状数组。 其实树状数组本质就是用一个正整数关于二的不重复次幂的唯一分解性质优化前缀和，使查询与修改都变成了$O(log n)$ 主席树就像一颗颗权值线段树的前缀和，我们也可以用树状数组优化他，使得查询与修改复杂度都变为$O((log n)^2)。]]></content>
+      <categories>
+        <category>数据结构</category>
+        <category>线段树</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[浅谈可并堆-启发式合并-左偏树]]></title>
     <url>%2F2019%2F07%2F19%2F%E6%B5%85%E8%B0%88%E5%8F%AF%E5%B9%B6%E5%A0%86%2F</url>
     <content type="text"><![CDATA[普通的二叉堆是一颗完全二叉树，可以支持$O(1)$的查询当前堆内min/max，$O(log n)$的插入和删除节点。他支不支持合并呢？ 我们可以首先改变一下堆的写法，把他用一种类似BST(二叉搜索树)的写法写出来，就可以有一种合并的方法！ 先用文字描述一下：假设我们要将x和y这两个小根堆合并，我们判断一下如果x的堆顶大于y的堆顶，就交换一下x和y，然后继续合并x的某个子孩子和y。 没看懂上面那一段文字也没关系，我们上图：(图取自教练上课时的课件，应该没关系吧QAQ) 假设我们要合并这两棵树 继续往下合并 这次合并我们发现x的堆顶大于y的堆顶了，就交换了x和y，然后继续往下合并 最后我们发现7没有右儿子，就直接让7的右儿子变成y就行了！！ 到此，合并正式完成！ 但是我们发现这样合并完之后，堆并不再是一颗完全二叉树了，那怎么办呢？ 这里就我们可以用一种贪心的思想。其实就是我之前说的继续合并x的某个儿子与y。究竟是哪个儿子呢？ 我们这里定义一个值，叫做”根值”，一个节点的根值就是它到最近的叶子节点的距离。其实之前那几张图上每个节点左上角的值就是这个点的根值。 那么我们每次合并就只要合并x的根值最小的儿子和y就行了。这就叫做启发式合并(貌似)。是不是跟并查集的按秩合并有点像啊! 关于他的复杂度，我们可以感性理解为O(两个堆的堆顶的根值)，而用这种启发式合并的话，即使根值最坏也就是$logn$的(完全二叉树)，所以合并一次的复杂度就是$O(log n)$的辣！ 那么左偏树又是什么呢？其实就是保证它的右儿子的根值比作儿子小，然后每次合并就只用合并x的右儿子和y就行了！同时回溯的时候发现不满足左偏树性质时就交换左右儿子(感觉没什么用啊) 插入 就是合并一个堆和一个只有一个点的堆。 删除 直接合并它的左右儿子就行了 查询堆顶 直接返回堆顶就行了 关于启发式合并那一块是学了左偏树之后自己YY的，不知道是否叫这个啊？还是有什么别的名字？各位dalao轻喷啊QAQ 下面贴代码吧！指针党福利！(有想看指针版treap的可以去我的题解里) 启发式合并：(通过Luogu P3377,用时405ms) 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172#include&lt;cstdio&gt;#include&lt;cstdlib&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#include&lt;iostream&gt;#define DEBUG printf("PassLine:%d\n", __LINE__)using namespace std;const int maxn = 1e5+10; struct left_heap&#123; int dist, val, idx; left_heap *ls, *rs, *fa; left_heap()&#123; dist = val = idx = 0; ls = rs = fa = NULL; &#125;&#125;;int n, m, exist[maxn];left_heap *tr[maxn];left_heap *getf(left_heap *x)&#123;//找到x所属的堆的根 while(x-&gt;fa != NULL &amp;&amp; x!=NULL) x = x-&gt;fa; return x;&#125;left_heap *merge(left_heap *x, left_heap *y)&#123; if(x == NULL) return y; if(y == NULL) return x; if(x-&gt;val &gt; y-&gt;val || (x-&gt;val == y-&gt;val &amp;&amp; x-&gt;idx &gt; y-&gt;idx)) swap(x, y);//如果x的堆顶的值大于y的堆顶，就交换两个堆 if(x-&gt;ls == NULL) x-&gt;ls = merge(x-&gt;ls, y); else if(x-&gt;rs == NULL) x-&gt;rs = merge(x-&gt;rs, y); else if(x-&gt;ls-&gt;dist &lt; x-&gt;rs-&gt;dist) x-&gt;ls = merge(x-&gt;ls, y);//左儿子的根值比右儿子小就继续合并左儿子和y else x-&gt;rs = merge(x-&gt;rs, y);//否则合并右儿子和y if(x-&gt;ls != NULL) x-&gt;ls-&gt;fa = x; if(x-&gt;rs != NULL) x-&gt;rs-&gt;fa = x; if(x-&gt;ls == NULL || x-&gt;rs == NULL) x-&gt;dist = 0; else x-&gt;dist = min(x-&gt;ls-&gt;dist, x-&gt;rs-&gt;dist)+1;//更新x的根值 return x;&#125;int pop(left_heap *x)&#123; int t = x-&gt;val; if(x-&gt;ls != NULL)x-&gt;ls-&gt;fa = NULL; if(x-&gt;rs != NULL)x-&gt;rs-&gt;fa = NULL; if(x-&gt;ls != NULL &amp;&amp; x-&gt;rs != NULL)merge(x-&gt;ls, x-&gt;rs);//合并左右儿子 exist[x-&gt;idx] = true; delete x;//直接在内存中删除x，以防后患+节约内存 return t;&#125;int main()&#123; ios::sync_with_stdio(false); cin &gt;&gt; n &gt;&gt; m; int t; for(int i=1; i&lt;=n; i++)&#123; cin &gt;&gt; t; left_heap *la = new left_heap; la-&gt;val = t; la-&gt;idx = i; tr[i] = la; &#125; int opt, x, y; for(int i=1; i&lt;=m; i++)&#123; cin &gt;&gt; opt; if(opt == 1)&#123;//合并操作 cin &gt;&gt; x &gt;&gt; y; if(exist[x] || exist[y]) continue; if(x == y) continue; left_heap *fx = getf(tr[x]), *fy = getf(tr[y]);//找到两个堆的根 if(fx == fy) continue; merge(fx, fy);//合并 &#125; if(opt == 2)&#123; cin &gt;&gt; x; if(exist[x] || exist[getf(tr[x])-&gt;idx])&#123;cout &lt;&lt; -1 &lt;&lt; endl;continue;&#125; else cout &lt;&lt; pop(getf(tr[x])) &lt;&lt; endl; &#125; &#125;&#125; 左偏树：(通过Luogu P3377, 用时363ms) 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869#include&lt;cstdio&gt;#include&lt;cstdlib&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#include&lt;iostream&gt;#define DEBUG printf("PassLine:%d\n", __LINE__)using namespace std;const int maxn = 1e5+10; struct left_heap&#123; int dist, val, idx; left_heap *ls, *rs, *fa; left_heap()&#123; dist = val = idx = 0; ls = rs = fa = NULL; &#125;&#125;;int n, m, exist[maxn];left_heap *tr[maxn];left_heap *getf(left_heap *x)&#123; while(x-&gt;fa != NULL &amp;&amp; x!=NULL) x = x-&gt;fa; return x;&#125;left_heap *merge(left_heap *x, left_heap *y)&#123; if(x == NULL) return y; if(y == NULL) return x; if(x-&gt;val &gt; y-&gt;val || (x-&gt;val == y-&gt;val &amp;&amp; x-&gt;idx &gt; y-&gt;idx)) swap(x, y); x-&gt;rs = merge(x-&gt;rs, y); if(x-&gt;rs != NULL)x-&gt;rs-&gt;fa = x; if(x-&gt;ls == NULL)&#123;x-&gt;ls = x-&gt;rs; x-&gt;rs = NULL;&#125; else if(x-&gt;ls-&gt;dist &lt; x-&gt;rs-&gt;dist) swap(x-&gt;ls, x-&gt;rs);//主要是这一步，如果左儿子比右儿子根值小，就交换左右儿子 x-&gt;dist = (x-&gt;rs == NULL ? 0 : x-&gt;rs-&gt;dist+1); return x;&#125;int pop(left_heap *x)&#123; int t = x-&gt;val; if(x-&gt;ls != NULL)x-&gt;ls-&gt;fa = NULL; if(x-&gt;rs != NULL)x-&gt;rs-&gt;fa = NULL; if(x-&gt;ls != NULL &amp;&amp; x-&gt;rs != NULL)merge(x-&gt;ls, x-&gt;rs); exist[x-&gt;idx] = true; delete x; return t;&#125;int main()&#123; ios::sync_with_stdio(false); cin &gt;&gt; n &gt;&gt; m; int t; for(int i=1; i&lt;=n; i++)&#123; cin &gt;&gt; t; left_heap *la = new left_heap; la-&gt;val = t; la-&gt;idx = i; tr[i] = la; &#125; int opt, x, y; for(int i=1; i&lt;=m; i++)&#123; cin &gt;&gt; opt; if(opt == 1)&#123; cin &gt;&gt; x &gt;&gt; y; if(exist[x] || exist[y]) continue; if(x == y) continue; left_heap *fx = getf(tr[x]), *fy = getf(tr[y]); if(fx == fy) continue; merge(fx, fy); &#125; if(opt == 2)&#123; cin &gt;&gt; x; if(exist[x] || exist[getf(tr[x])-&gt;idx])&#123;cout &lt;&lt; -1 &lt;&lt; endl;continue;&#125; else cout &lt;&lt; pop(getf(tr[x])) &lt;&lt; endl; &#125; &#125;&#125; 最后说几句，可并堆还有好几种，如配对堆，斐波那契堆等等，大家想学的可以去看一看！]]></content>
+      <categories>
+        <category>数据结构</category>
+        <category>堆</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
   </entry>
 </search>

@@ -96,23 +96,25 @@
 
 
 
-  <meta name="description" content="An HN-OIer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jianuo_Zhu&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="你：“woc这个树套树细节怎么这么多？” 某dalao：“什么题让我看一看……这不cdq裸题吗？” 你：“???…”  你：“woc这三百行的代码怎么调啊？” 某dalao：“emmm，我的才一百不到啊？” 你：“???求教怎么写的” 某dalao：“整体二分直接做啊” 你：“???…”  整体二分前置知识:二分答案(等于没说) 先来看一道经典题吧 k-th num题意：给你一个序列，每次询问一个">
+<meta name="keywords" content="数据结构,二分,分治">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈整体二分和CDQ分治">
+<meta property="og:url" content="http://yoursite.com/2019/07/19/浅谈整体二分和CDQ分治/index.html">
 <meta property="og:site_name" content="Jianuo_Zhu&#39;s Blog">
-<meta property="og:description" content="An HN-OIer">
+<meta property="og:description" content="你：“woc这个树套树细节怎么这么多？” 某dalao：“什么题让我看一看……这不cdq裸题吗？” 你：“???…”  你：“woc这三百行的代码怎么调啊？” 某dalao：“emmm，我的才一百不到啊？” 你：“???求教怎么写的” 某dalao：“整体二分直接做啊” 你：“???…”  整体二分前置知识:二分答案(等于没说) 先来看一道经典题吧 k-th num题意：给你一个序列，每次询问一个">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-19T11:45:13.450Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jianuo_Zhu&#39;s Blog">
-<meta name="twitter:description" content="An HN-OIer">
+<meta name="twitter:title" content="浅谈整体二分和CDQ分治">
+<meta name="twitter:description" content="你：“woc这个树套树细节怎么这么多？” 某dalao：“什么题让我看一看……这不cdq裸题吗？” 你：“???…”  你：“woc这三百行的代码怎么调啊？” 某dalao：“emmm，我的才一百不到啊？” 你：“???求教怎么写的” 某dalao：“整体二分直接做啊” 你：“???…”  整体二分前置知识:二分答案(等于没说) 先来看一道经典题吧 k-th num题意：给你一个序列，每次询问一个">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/19/浅谈整体二分和CDQ分治/">
 
 
 
@@ -122,7 +124,7 @@
   };
 </script>
 
-  <title>Jianuo_Zhu's Blog</title>
+  <title>浅谈整体二分和CDQ分治 | Jianuo_Zhu's Blog</title>
   
 
 
@@ -170,8 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -213,7 +214,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -304,9 +305,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -338,10 +339,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/19/浅谈整体二分和CDQ分治/" class="post-title-link" itemprop="url">浅谈整体二分和CDQ分治</a>
+          <h1 class="post-title" itemprop="name headline">浅谈整体二分和CDQ分治
+
               
             
           </h1>
@@ -422,9 +421,7 @@
       
 
       
-        
-          
-            <p>你：“woc这个树套树细节怎么这么多？”</p>
+        <p>你：“woc这个树套树细节怎么这么多？”</p>
 <p>某dalao：“什么题让我看一看……这不cdq裸题吗？”</p>
 <p>你：“???…”</p>
 <hr>
@@ -443,8 +440,6 @@
 <p>以上的二分都是基础，想必大家都是没什么问题。</p>
 <p>但是如果想要多组询问该怎么做呢？肯定不能每组询问都扫一遍，</p>
 
-          
-        
       
     </div>
 
@@ -465,361 +460,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/浅谈权值线段树与可持久化线段树/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZJN">
-      <meta itemprop="description" content="An HN-OIer">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jianuo_Zhu's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/19/浅谈权值线段树与可持久化线段树/" class="post-title-link" itemprop="url">浅谈权值线段树与可持久化线段树</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-19 19:21:52 / 修改时间：19:41:18" itemprop="dateCreated datePublished" datetime="2019-07-19T19:21:52+08:00">2019-07-19</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/线段树/" itemprop="url" rel="index"><span itemprop="name">线段树</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
           
-
+            <a href="/tags/二分/" rel="tag"># 二分</a>
           
-            
+            <a href="/tags/分治/" rel="tag"># 分治</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>我们先从一道经典题来入手吧</p>
-<h3 id="你需要维护一个数据结构，支持插入一个数，以及询问当前第k大的数是什么"><a href="#你需要维护一个数据结构，支持插入一个数，以及询问当前第k大的数是什么" class="headerlink" title="你需要维护一个数据结构，支持插入一个数，以及询问当前第k大的数是什么"></a>你需要维护一个数据结构，支持插入一个数，以及询问当前第k大的数是什么</h3><p>我们用平衡树自然是可以做的，但有没有别的更简单的做法呢？</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/19/浅谈权值线段树与可持久化线段树/#more" rel="contents">
-                阅读全文 &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/19/浅谈权值线段树与可持久化线段树/" rel="next" title="浅谈权值线段树与可持久化线段树">
+                <i class="fa fa-chevron-left"></i> 浅谈权值线段树与可持久化线段树
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/浅谈可并堆/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZJN">
-      <meta itemprop="description" content="An HN-OIer">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jianuo_Zhu's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/19/浅谈可并堆/" class="post-title-link" itemprop="url">浅谈可并堆-启发式合并-左偏树</a>
-              
             
-          </h1>
-        
+          </div>
 
-        <div class="post-meta">
-          <span class="post-time">
+          <span class="post-nav-divider"></span>
 
+          <div class="post-nav-prev post-nav-item">
             
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-19 14:15:34 / 修改时间：19:41:13" itemprop="dateCreated datePublished" datetime="2019-07-19T14:15:34+08:00">2019-07-19</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/堆/" itemprop="url" rel="index"><span itemprop="name">堆</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>普通的二叉堆是一颗完全二叉树，可以支持$O(1)$的查询当前堆内min/max，$O(log n)$的插入和删除节点。他支不支持合并呢？</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/19/浅谈可并堆/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -829,14 +503,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -857,8 +532,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -938,6 +622,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整体二分"><span class="nav-number">1.</span> <span class="nav-text">整体二分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#k-th-num"><span class="nav-number">1.1.</span> <span class="nav-text">k-th num</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1067,6 +768,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -1429,14 +1134,6 @@
   
 
   
-  
-    
-      
-    
-      
-    
-      
-    
   
 
   
