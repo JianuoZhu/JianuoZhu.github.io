@@ -96,23 +96,30 @@
 
 
 
-  <meta name="description" content="An HN-OIer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jianuo_Zhu&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="普通的二叉堆是一颗完全二叉树，可以支持$O(1)$的查询当前堆内min/max，$O(log n)$的插入和删除节点。他支不支持合并呢？ 我们可以首先改变一下堆的写法，把他用一种类似BST(二叉搜索树)的写法写出来，就可以有一种合并的方法！ 先用文字描述一下：假设我们要将x和y这两个小根堆合并，我们判断一下如果x的堆顶大于y的堆顶，就交换一下x和y，然后继续合并x的某个子孩子和y。 没看懂上面那一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈可并堆-启发式合并-左偏树">
+<meta property="og:url" content="http://yoursite.com/2019/07/19/Test/index.html">
 <meta property="og:site_name" content="Jianuo_Zhu&#39;s Blog">
-<meta property="og:description" content="An HN-OIer">
+<meta property="og:description" content="普通的二叉堆是一颗完全二叉树，可以支持$O(1)$的查询当前堆内min/max，$O(log n)$的插入和删除节点。他支不支持合并呢？ 我们可以首先改变一下堆的写法，把他用一种类似BST(二叉搜索树)的写法写出来，就可以有一种合并的方法！ 先用文字描述一下：假设我们要将x和y这两个小根堆合并，我们判断一下如果x的堆顶大于y的堆顶，就交换一下x和y，然后继续合并x的某个子孩子和y。 没看懂上面那一">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2018/11/18/5bf16d358221f.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/18/5bf16dc32b7cb.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/18/5bf16e33be631.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/18/5bf16ebd7133f.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/18/5bf16f387cc36.jpg">
+<meta property="og:updated_time" content="2019-07-19T06:20:20.130Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jianuo_Zhu&#39;s Blog">
-<meta name="twitter:description" content="An HN-OIer">
+<meta name="twitter:title" content="浅谈可并堆-启发式合并-左偏树">
+<meta name="twitter:description" content="普通的二叉堆是一颗完全二叉树，可以支持$O(1)$的查询当前堆内min/max，$O(log n)$的插入和删除节点。他支不支持合并呢？ 我们可以首先改变一下堆的写法，把他用一种类似BST(二叉搜索树)的写法写出来，就可以有一种合并的方法！ 先用文字描述一下：假设我们要将x和y这两个小根堆合并，我们判断一下如果x的堆顶大于y的堆顶，就交换一下x和y，然后继续合并x的某个子孩子和y。 没看懂上面那一">
+<meta name="twitter:image" content="https://i.loli.net/2018/11/18/5bf16d358221f.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/19/Test/">
 
 
 
@@ -122,7 +129,7 @@
   };
 </script>
 
-  <title>Jianuo_Zhu's Blog</title>
+  <title>浅谈可并堆-启发式合并-左偏树 | Jianuo_Zhu's Blog</title>
   
 
 
@@ -170,8 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -213,7 +219,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -304,9 +310,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -338,10 +344,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/19/Test/" class="post-title-link" itemprop="url">浅谈可并堆-启发式合并-左偏树</a>
+          <h1 class="post-title" itemprop="name headline">浅谈可并堆-启发式合并-左偏树
+
               
             
           </h1>
@@ -404,9 +408,7 @@
       
 
       
-        
-          
-            <p>普通的二叉堆是一颗完全二叉树，可以支持$O(1)$的查询当前堆内min/max，$O(log n)$的插入和删除节点。他支不支持合并呢？</p>
+        <p>普通的二叉堆是一颗完全二叉树，可以支持$O(1)$的查询当前堆内min/max，$O(log n)$的插入和删除节点。他支不支持合并呢？</p>
 <p>我们可以首先改变一下堆的写法，把他用一种类似BST(二叉搜索树)的写法写出来，就可以有一种合并的方法！</p>
 <p>先用文字描述一下：假设我们要将x和y这两个小根堆合并，我们判断一下如果x的堆顶大于y的堆顶，就交换一下x和y，然后继续合并x的某个子孩子和y。</p>
 <p>没看懂上面那一段文字也没关系，我们上图：(图取自教练上课时的课件，应该没关系吧QAQ)</p>
@@ -447,8 +449,6 @@
 
 <p>最后说几句，可并堆还有好几种，如配对堆，斐波那契堆等等，大家想学的可以去看一看！</p>
 
-          
-        
       
     </div>
 
@@ -471,12 +471,12 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -486,14 +486,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -688,6 +689,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
